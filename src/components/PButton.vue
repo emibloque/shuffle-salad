@@ -1,12 +1,18 @@
 <template>
-  <button class="btn">
+  <button class="btn" v-on:click="click">
     <slot></slot>
   </button>
 </template>
 
 <script>
 export default {
-  name: 'PButton'
+  name: 'PButton',
+
+  methods: {
+    click(e) {
+      this.$emit('click', e)
+    }
+  }
 }
 </script>
 
@@ -19,7 +25,7 @@ export default {
   font-size: $font-size;
   font-family: $font-family;
   padding: $spacing-small $spacing-medium;
-  border-radius: $border-radious;
+  border-radius: $border-radius;
 
 
   width: 100%;
